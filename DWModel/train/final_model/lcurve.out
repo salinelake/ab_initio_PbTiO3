@@ -1,0 +1,3 @@
+#  step      rmse_trn   rmse_lc_trn   rmse_gl_trn         lr
+      0      7.71e+00      1.55e+00      1.48e+00    1.0e-03
+   1000      1.65e+00      7.62e-01      3.15e-01    1.1e-06

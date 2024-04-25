@@ -1,0 +1,157 @@
+{
+    "type_map": [
+      "O",
+      "Pb",
+      "Ti"
+    ],
+    "mass_map": [
+      15.9994,
+      207.2,
+      47.867
+    ],
+    "init_data_prefix": "/home/pinchenx/ferro/PTO/DPGEN/PTO.init",
+    "init_data_sys": [
+      "02.md/cubic/300K/deepmd",
+      "02.md/cubic/600K/deepmd",
+      "02.md/cubic/900K/deepmd",
+      "02.md/tetra/300K/deepmd",
+      "02.md/tetra/600K/deepmd",
+      "02.md/tetra/900K/deepmd"
+    ],
+    "init_batch_size": [
+      1,1,1,1,1,1
+    ],
+    "sys_configs": [
+      ["/home/pinchenx/ferro/PTO/DPGEN/PTO.init/01.scale_pert/cubic/scale-0.98-0.98-0.98/0000*/POSCAR"],    
+      ["/home/pinchenx/ferro/PTO/DPGEN/PTO.init/01.scale_pert/cubic/scale-1.0-1.0-1.0/0000*/POSCAR"],    
+      ["/home/pinchenx/ferro/PTO/DPGEN/PTO.init/01.scale_pert/cubic/scale-1.02-1.02-1.02/0000*/POSCAR"],
+      ["/home/pinchenx/ferro/PTO/DPGEN/PTO.init/01.scale_pert/tetra/scale-1.0-1.0-0.97/0000*/POSCAR"],
+      ["/home/pinchenx/ferro/PTO/DPGEN/PTO.init/01.scale_pert/tetra/scale-1.0-1.0-0.985/0000*/POSCAR"],
+      ["/home/pinchenx/ferro/PTO/DPGEN/PTO.init/01.scale_pert/tetra/scale-1.0-1.0-1.0/0000*/POSCAR"]
+    ],
+    "sys_batch_size": [
+      1,1,1,1,1,1
+    ],
+    "_comment": " 00.train ",
+    "numb_models": 4,
+    "train_param": "input.json",
+    "default_training_param": {
+      "_comment": " model parameters",
+      "model": {
+          "type_map":     ["O", "Pb","Ti"],
+          "descriptor" :{
+              "type":             "se_a",
+              "sel":              [120, 30, 30],
+              "rcut_smth":        1.00,
+              "rcut":             6.00,
+              "neuron":           [25, 50, 100],
+              "resnet_dt":        false,
+              "axis_neuron":      16,
+              "seed":             1,
+              "_comment":         " that's all"
+          },
+          "fitting_net" : {
+              "neuron":           [200, 200, 200],
+              "resnet_dt":        true,
+              "seed":             1,
+              "_comment":         " that's all"
+          },
+          "_comment":     " that's all"
+      },
+  
+      "learning_rate" :{
+          "type":         "exp",
+          "start_lr":     0.002,
+          "decay_steps":  1500,
+          "decay_rate":   0.98,
+          "_comment":     "that's all"
+      },
+  
+      "loss" :{
+          "start_pref_e": 0.02,
+          "limit_pref_e": 1,
+          "start_pref_f": 1000,
+          "limit_pref_f": 1,
+          "start_pref_v": 0.02,
+          "limit_pref_v": 1.0,
+          "_comment":     " that's all"
+      },
+  
+      "_comment": " traing controls",
+      "training" : {
+          "systems":      [],
+          "set_prefix":   "set",    
+          "stop_batch":   500000,
+          "batch_size":   2,
+  
+          "seed":         1,
+  
+          "_comment": " display and restart",
+          "_comment": " frequencies counted in batch",
+          "disp_file":    "lcurve.out",
+          "disp_freq":    1000,
+          "numb_test":    10,
+          "save_freq":    1000,
+          "save_ckpt":    "model.ckpt",
+          "load_ckpt":    "model.ckpt",
+          "disp_training":true,
+          "time_training":true,
+          "profiling":    false,
+          "profiling_file":"timeline.json",
+          "_comment":     "that's all"
+      },
+      "_comment":         "that's all"
+    },
+    "model_devi_dt": 0.001,
+    "model_devi_skip": 0,
+    "model_devi_f_trust_lo": 0.05,
+    "model_devi_f_trust_hi": 0.2,
+    "model_devi_clean_traj": false,
+    "model_devi_jobs": [
+      {"_idx": 0, "ensemble": "npt", "nsteps": 1000,  "press": [0,1e4,1e5],"sys_idx": [1,4], "temps": [300,600,900],"trj_freq": 10},
+        {"_idx": 1, "ensemble": "npt", "nsteps": 5000,  "press": [0,1e4,1e5],"sys_idx": [0,2,3,5], "temps": [300,600,900],"trj_freq": 10},
+        {"_idx": 2, "ensemble": "npt", "nsteps": 5000,  "press": [0,1e4,1e5],"sys_idx": [1,4], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 3, "ensemble": "npt", "nsteps": 10000,  "press": [0,1e4,1e5],"sys_idx": [0,1,3,4], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 4, "ensemble": "npt", "nsteps": 10000,  "press": [0,1e4,1e5],"sys_idx": [1,4], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 5, "ensemble": "npt", "nsteps": 10000,  "press": [0,1e4,1e5],"sys_idx": [1,2,3,5], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 6, "ensemble": "npt-aniso", "nsteps": 10000,  "press": [0,1e4,1e5],"sys_idx": [0,1,2,3,4,5], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 7, "ensemble": "npt-aniso", "nsteps": 50000,  "press": [0,1e4,1e5],"sys_idx": [0,3], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 8, "ensemble": "npt-aniso", "nsteps": 50000,  "press": [0,1e4,1e5],"sys_idx": [2,5], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 9, "ensemble": "npt-aniso", "nsteps": 50000,  "press": [0,1e4,1e5],"sys_idx": [1,4], "temps": [300,600,900,1200],"trj_freq": 10},
+        {"_idx": 10, "ensemble": "npt-aniso", "nsteps": 100000,  "press": [0,1e4],"sys_idx": [1,5], "temps": [50,300,600,900,1000,1100],"trj_freq": 20},
+        {"_idx": 11, "ensemble": "npt-aniso", "nsteps": 100000,  "press": [0,1e4],"sys_idx": [1,5], "temps": [50,300,600,900,1000,1100],"trj_freq": 20}
+          ],
+    "fp_style": "pwscf",
+    "shuffle_poscar": false,
+    "fp_task_max": 100,
+    "fp_task_min": 1,
+    "fp_pp_path": "/home/pinchenx/data.gpfs/softwares/QuantumEspresso/pseudos",
+    "fp_pp_files": [
+      "O_ONCV_PBE-1.2.upf",
+      "Pb_ONCV_PBE-1.2.upf",
+      "Ti_ONCV_PBE-1.2.upf"
+    ],
+    "user_fp_params":     {
+      "_comment": "pseudo_dir will be added automatically",
+      "control":      {
+          "calculation":      "scf",
+          "restart_mode":     "from_scratch",
+          "outdir":           "./OUT",
+          "tprnfor":          true,
+          "tstress":          true,
+          "disk_io":          "none"
+      },
+      "_comment": "ibrav, nat and ntyp will be added automatically",
+      "system":       {
+          "ecutwfc":          150,
+          "input_dft": "SCAN",
+          "ts_vdw_econv_thr": 1e-8,
+          "nosym":            true
+      },
+      "electrons":    {
+          "conv_thr":         1e-8
+      },
+      "kspacing":     100
+  },
+    "_comment":         " that's all "
+  }

@@ -1,0 +1,28 @@
+!exclude_bands : 1
+num_wann  = 594
+num_iter  = 100
+!kmesh_tol=0.00001
+write_xyz         = True
+translate_home_cell = True
+
+!auto_projections = .true.
+guiding_centres = .true.
+begin projections
+  Pb: s;d
+  Ti: sp3
+  O: sp3
+end projections
+
+mp_grid : 2 2 2
+begin kpoints
+  0.00000000  0.00000000  0.00000000
+  0.00000000  0.00000000  0.50000000
+  0.00000000  0.50000000  0.00000000
+  0.00000000  0.50000000  0.50000000
+  0.50000000  0.00000000  0.00000000
+  0.50000000  0.00000000  0.50000000
+  0.50000000  0.50000000  0.00000000
+  0.50000000  0.50000000  0.50000000
+end kpoints
+
+

@@ -1,0 +1,51 @@
+srun: Job step aborted: Waiting up to 47 seconds for job step to finish.
+Abort(1) on node 3 (rank 3 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 3
+Abort(1) on node 1 (rank 1 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 1
+Abort(1) on node 9 (rank 9 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 9
+Abort(1) on node 7 (rank 7 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 7
+Abort(1) on node 5 (rank 5 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 5
+Abort(1) on node 8 (rank 8 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 8
+Abort(1) on node 6 (rank 6 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 6
+Abort(1) on node 4 (rank 4 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 4
+Abort(1) on node 2 (rank 2 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 2
+Abort(1) on node 0 (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+slurmstepd: error: *** STEP 7162031.0 ON tiger-h21c2n10 CANCELLED AT 2021-09-07T02:07:05 ***
+srun: error: tiger-h21c2n11: tasks 10-19: Killed
+srun: launch/slurm: _step_signal: Terminating StepId=7162031.0
+srun: error: tiger-h21c2n13: tasks 30-39: Killed
+srun: error: tiger-h21c2n12: tasks 20-29: Killed
+srun: error: tiger-h21c2n14: tasks 40-49: Killed
+srun: error: tiger-h21c2n17: tasks 70-79: Killed
+srun: error: tiger-h21c2n15: tasks 50-59: Killed
+srun: error: tiger-h21c2n16: tasks 60-69: Killed
+srun: error: tiger-h21c2n10: tasks 0-9: Killed
+srun: Job step aborted: Waiting up to 47 seconds for job step to finish.
+Abort(1) on node 1 (rank 1 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 1
+Abort(1) on node 8 (rank 8 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 8
+Abort(1) on node 9 (rank 9 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 9
+Abort(1) on node 0 (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+Abort(1) on node 2 (rank 2 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 2
+slurmstepd: error: *** STEP 7162031.2 ON tiger-h21c2n10 CANCELLED AT 2021-09-07T02:07:13 ***
+srun: error: tiger-h21c2n13: tasks 30-39: Killed
+srun: launch/slurm: _step_signal: Terminating StepId=7162031.2
+srun: error: tiger-h21c2n11: tasks 10-19: Killed
+srun: error: tiger-h21c2n17: tasks 70-79: Killed
+srun: error: tiger-h21c2n12: tasks 20-29: Killed
+srun: error: tiger-h21c2n14: tasks 40-49: Killed
+srun: error: tiger-h21c2n10: tasks 0-9: Killed
+srun: error: tiger-h21c2n16: tasks 60-69: Killed
+srun: error: tiger-h21c2n15: tasks 50-59: Killed
+ Error: Problem opening input file PbTiO3.mmn
+ Error on node 0: examine the output/error files for details
+srun: Job step aborted: Waiting up to 47 seconds for job step to finish.
+Abort(1) on node 0 (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+slurmstepd: error: *** STEP 7162031.3 ON tiger-h21c2n10 CANCELLED AT 2021-09-07T02:07:18 ***
+srun: error: tiger-h21c2n13: tasks 30-39: Killed
+srun: launch/slurm: _step_signal: Terminating StepId=7162031.3
+srun: error: tiger-h21c2n17: tasks 70-79: Killed
+srun: error: tiger-h21c2n11: tasks 10-19: Killed
+srun: error: tiger-h21c2n14: tasks 40-49: Killed
+srun: error: tiger-h21c2n12: tasks 20-29: Killed
+srun: error: tiger-h21c2n15: tasks 50-59: Killed
+srun: error: tiger-h21c2n16: tasks 60-69: Killed
+srun: error: tiger-h21c2n10: tasks 0-9: Killed

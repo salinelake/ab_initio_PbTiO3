@@ -1,0 +1,145 @@
+{
+    "_comment": "that's all",
+    "model": {
+        "type_map": [
+            "O",
+            "Pb",
+            "Ti"
+        ],
+        "descriptor": {
+            "type": "se_a",
+            "sel": [
+                120,
+                30,
+                30
+            ],
+            "rcut_smth": 1.0,
+            "rcut": 6.0,
+            "neuron": [
+                20,
+                40,
+                80
+            ],
+            "resnet_dt": false,
+            "axis_neuron": 8,
+            "seed": 33299479,
+            "_comment": " that's all"
+        },
+        "fitting_net": {
+            "neuron": [
+                120,
+                120,
+                120
+            ],
+            "resnet_dt": true,
+            "seed": 20500825,
+            "_comment": " that's all"
+        },
+        "_comment": " that's all"
+    },
+    "learning_rate": {
+        "type": "exp",
+        "start_lr": 0.002,
+        "decay_steps": 1500,
+        "stop_lr":2.379e-06,
+        "_comment": "that's all"
+    },
+    "loss": {
+        "start_pref_e": 0.1,
+        "limit_pref_e": 1,
+        "start_pref_f": 100,
+        "limit_pref_f": 1,
+        "start_pref_v": 0.01,
+        "limit_pref_v": 0.1,
+        "_comment": " that's all"
+    },
+    "training": {
+        "training_data":{
+            "systems": [
+                "/home/pinchenx/ferro/DPGEN/PTO.init/02.md/cubic/300K/deepmd",
+                "/home/pinchenx/ferro/DPGEN/PTO.init/02.md/cubic/600K/deepmd",
+                "/home/pinchenx/ferro/DPGEN/PTO.init/02.md/cubic/900K/deepmd",
+                "/home/pinchenx/ferro/DPGEN/PTO.init/02.md/tetra/300K/deepmd",
+                "/home/pinchenx/ferro/DPGEN/PTO.init/02.md/tetra/600K/deepmd",
+                "/home/pinchenx/ferro/DPGEN/PTO.init/02.md/tetra/900K/deepmd",
+                "/home/pinchenx/ferro/DPGEN/iter.000000/02.fp/data.001",
+                "/home/pinchenx/ferro/DPGEN/iter.000000/02.fp/data.004",
+                "/home/pinchenx/ferro/DPGEN/iter.000001/02.fp/data.003",
+                "/home/pinchenx/ferro/DPGEN/iter.000001/02.fp/data.002",
+                "/home/pinchenx/ferro/DPGEN/iter.000001/02.fp/data.005",
+                "/home/pinchenx/ferro/DPGEN/iter.000001/02.fp/data.000",
+                "/home/pinchenx/ferro/DPGEN/iter.000002/02.fp/data.001",
+                "/home/pinchenx/ferro/DPGEN/iter.000002/02.fp/data.004",
+                "/home/pinchenx/ferro/DPGEN/iter.000003/02.fp/data.003",
+                "/home/pinchenx/ferro/DPGEN/iter.000003/02.fp/data.001",
+                "/home/pinchenx/ferro/DPGEN/iter.000003/02.fp/data.000",
+                "/home/pinchenx/ferro/DPGEN/iter.000003/02.fp/data.004",
+                "/home/pinchenx/ferro/DPGEN/iter.000004/02.fp/data.001",
+                "/home/pinchenx/ferro/DPGEN/iter.000004/02.fp/data.004",
+                "/home/pinchenx/ferro/DPGEN/iter.000005/02.fp/data.003",
+                "/home/pinchenx/ferro/DPGEN/iter.000005/02.fp/data.001",
+                "/home/pinchenx/ferro/DPGEN/iter.000005/02.fp/data.002",
+                "/home/pinchenx/ferro/DPGEN/iter.000005/02.fp/data.005",
+                "/home/pinchenx/ferro/DPGEN/iter.000006/02.fp/data.003",
+                "/home/pinchenx/ferro/DPGEN/iter.000006/02.fp/data.001",
+                "/home/pinchenx/ferro/DPGEN/iter.000006/02.fp/data.002",
+                "/home/pinchenx/ferro/DPGEN/iter.000006/02.fp/data.005",
+                "/home/pinchenx/ferro/DPGEN/iter.000006/02.fp/data.000",
+                "/home/pinchenx/ferro/DPGEN/iter.000006/02.fp/data.004",
+                "/home/pinchenx/ferro/DPGEN/iter.000007/02.fp/data.003",
+                "/home/pinchenx/ferro/DPGEN/iter.000007/02.fp/data.000",
+                "/home/pinchenx/ferro/DPGEN/iter.000008/02.fp/data.002",
+                "/home/pinchenx/ferro/DPGEN/iter.000008/02.fp/data.005"
+            ],
+            "set_prefix": "set",
+            "batch_size": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,            
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        "seed": 30079133,
+        "_comment": 400000,
+        "_comment": "stop batch 400000",
+        "disp_file": "lcurve.out",
+        "disp_freq": 1000,
+        "numb_test": 10,
+        "save_freq": 1000,
+        "save_ckpt": "model.ckpt",
+        "disp_training": true,
+        "time_training": true,
+        "profiling": false,
+        "profiling_file": "timeline.json"
+    }
+}

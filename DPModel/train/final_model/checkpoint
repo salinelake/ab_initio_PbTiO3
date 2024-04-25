@@ -1,0 +1,2 @@
+model_checkpoint_path: "/scratch/gpfs/pinchenx/Github/ferro_scratch/PTO/DPGEN/_RE_TRAIN/iter9/v2_small/model.ckpt"
+all_model_checkpoint_paths: "/scratch/gpfs/pinchenx/Github/ferro_scratch/PTO/DPGEN/_RE_TRAIN/iter9/v2_small/model.ckpt"

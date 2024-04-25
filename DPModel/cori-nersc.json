@@ -1,0 +1,85 @@
+{
+    "train": [
+      {
+        "machine": {
+          "batch": "slurm",
+          "hostname": "localhost",
+          "port": 22,
+          "username": "pinchenx",
+          "work_path": "/home/pinchenx/data.gpfs/tmp"
+        },
+        "resources": {
+          "numb_node": 1,
+          "numb_gpu": 1,
+          "task_per_node": 4,
+          "partition": "all",
+          "exclude_list": [],
+          "mem_limit": 32,
+          "source_list": [
+            "/home/pinchenx/tigress/utilities/activate_dpgen.sh"
+          ],
+          "module_list": [
+          ],
+          "time_limit": "12:00:00"
+        },
+        "group_size": 1,
+        "python_path": "python"
+      }
+    ],
+    "model_devi": [
+      {
+        "machine": {
+          "machine_type": "slurm",
+          "hostname": "localhost",
+          "port": 22,
+          "username": "pinchenx",
+          "work_path": "/home/pinchenx/data.gpfs/tmp"
+        },
+        "resources": {
+          "numb_node": 1,
+          "numb_gpu": 1,
+          "task_per_node": 4,
+          "partition": "all",
+          "exclude_list": [],
+          "mem_limit": 32,
+          "source_list": [
+            "/home/pinchenx/tigress/utilities/activate_dpgen.sh"
+          ],
+          "module_list": [
+          ],
+          "time_limit": "5:00:0"
+        },
+        "command": "lmp",
+        "group_size": 10
+      }
+    ],
+    "fp": [
+      {
+        "machine": {
+          "machine_type": "slurm",
+          "hostname": "cori.nersc.gov",
+          "port": 22,
+          "username": "pinchenx",
+          "work_path": "/global/homes/p/pinchenx/scratch/tmp",
+          "key_filename":"/home/pinchenx/.ssh/nersc-cert.pub"
+        },
+        "resources": {
+          "qos": "regular",
+          "numb_node": 1,
+          "task_per_node": 17,
+          "cpus_per_task": 16,
+          "exclude_list": [],
+          "with_mpi": false,
+          "source_list": [
+            "/global/homes/p/pinchenx/cfs/utilities/activate_qe.sh"
+          ],
+          "module_list": [],
+          "time_limit": "3:00:00",
+          "constraint_list": ["knl,quad,cache"],
+          "_comment": "that's All"
+        },
+        "command": "srun --cpu-bind=cores pw.x -in input",
+        "group_size": 2
+      }
+    ]
+  }

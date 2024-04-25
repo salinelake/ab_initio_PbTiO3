@@ -1,0 +1,57 @@
+
+     Program POST-PROC v.6.7MaX starts on 20Jun2023 at 22: 0:49 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     4 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       4
+
+     Reading xml data from directory:
+
+     ./pwscf.save/
+     Message from routine read_pp_mesh:
+     mesh size missing, using the one in header
+     Message from routine read_pp_mesh:
+     mesh size missing, using the one in header
+     Message from routine read_pp_mesh:
+     mesh size missing, using the one in header
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= SCAN
+                           (   0   0   0   0   0 263 267)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         347     347    105                 9781     9781    1558
+     Max         348     348    106                 9784     9784    1559
+     Sum        1389    1389    421                39127    39127    6235
+ 
+     Reading meta-gga kinetic term
+
+     Calling punch_plot, plot_num =   0
+     Writing data to file  pto_charge
+     Reading data from file  pto_charge
+
+     Writing data to be plotted to file pto.rho.xsf
+     Plot Type: 3D                     Output format: XCrySDen     
+ 
+     POST-PROC    :      0.16s CPU      0.32s WALL
+
+ 
+   This run was terminated on:  22: 0:49  20Jun2023            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

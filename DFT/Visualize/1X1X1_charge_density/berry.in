@@ -1,0 +1,44 @@
+&CONTROL
+   calculation      = 'nscf'
+   outdir           = './'
+   pseudo_dir       = '/home/pinchenx/data.gpfs/softwares/QuantumEspresso/q-e-qe-6.4.1/pseudo'
+   lberry           = .true.
+   gdir             = 3
+   nppstr           = 7
+/
+&SYSTEM
+   ecutwfc          = 80
+   occupations      = 'fixed'
+   input_dft        = 'SCAN'
+   ntyp             = 3
+   nat              = 5
+   ibrav            = 0
+/
+&ELECTRONS
+   mixing_beta      = 0.3
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Pb 207.2 Pb_ONCV_PBE-1.2.upf
+Ti 47.867 Ti_ONCV_PBE-1.2.upf
+O 15.999 O_ONCV_PBE-1.2.upf
+
+K_POINTS automatic
+4 4 4  0 0 0
+
+CELL_PARAMETERS angstrom
+3.92000000000000 0.00000000000000 0.00000000000000
+0.00000000000000 3.92000000000000 0.00000000000000
+0.00000000000000 0.00000000000000 3.92000000000000
+
+ATOMIC_POSITIONS angstrom
+Pb 0.0000000000 0.0000000000 0.0000000000 
+Ti 1.9600000000 1.9600000000 1.9600000000 
+O 1.9600000000 1.9600000000 0.0000000000 
+O 0.0000000000 1.9600000000 1.9600000000 
+O 1.9600000000 0.0000000000 1.9600000000 
+

@@ -1,0 +1,125 @@
+{
+    "model": {
+        "type_map": [
+            "O",
+            "Pb",
+            "Ti"
+        ],
+        "descriptor": {
+            "type": "se_e2_a",
+            "sel": [
+                120,
+                30,
+                30
+            ],
+            "rcut_smth": 1.0,
+            "rcut": 6.0,
+            "neuron": [
+                10,
+                20,
+                40
+            ],
+            "resnet_dt": false,
+            "axis_neuron": 8,
+            "seed": 1297716226,
+            "activation_function": "tanh",
+            "type_one_side": false,
+            "precision": "float64",
+            "trainable": true,
+            "exclude_types": [],
+            "set_davg_zero": false
+        },
+        "fitting_net": {
+            "type": "dipole",
+            "sel_type": [
+                2
+            ],
+            "neuron": [
+                80,
+                80,
+                80
+            ],
+            "resnet_dt": true,
+            "seed": 3057313076,
+            "activation_function": "tanh",
+            "precision": "float64"
+        },
+        "compress": {
+            "type": "se_e2_a",
+            "compress": true,
+            "model_file": "dipole.pb",
+            "table_config": [
+                5,
+                0.01,
+                0.1,
+                -1
+            ]
+        },
+        "data_stat_nbatch": 10,
+        "data_stat_protect": 0.01
+    },
+    "learning_rate": {
+        "type": "exp",
+        "start_lr": 0.001,
+        "stop_lr": 1e-06,
+        "decay_steps": 2000
+    },
+    "loss": {
+        "type": "tensor",
+        "pref": 1.0,
+        "pref_atomic": 0.1
+    },
+    "training": {
+        "seed": 3942666569,
+        "disp_file": "lcurve.out",
+        "disp_freq": 1000,
+        "numb_test": 10,
+        "save_freq": 1000,
+        "save_ckpt": "model.ckpt",
+        "disp_training": true,
+        "time_training": true,
+        "profiling": false,
+        "profiling_file": "timeline.json",
+        "training_data": {
+            "systems": [
+                "/home/pinchenx/ferro/DeepWannier/PTO.init/02.md/cubic/300K/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/PTO.init/02.md/tetra/300K/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/PTO.init/02.md/cubic/600K/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/PTO.init/02.md/tetra/600K/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000000/data.001/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000000/data.004/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000001/data.003/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000003/data.004/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000002/data.004/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000004/data.004/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000005/data.005/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000006/data.005/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000007/data.003/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000008/data.005/deepdp"
+            ],
+            "set_prefix": "set",
+            "batch_size": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "auto_prob": "prob_sys_size",
+            "sys_probs": null
+        },
+        "numb_steps": 1000,
+        "validation_data": null,
+        "tensorboard": false,
+        "tensorboard_log_dir": "log"
+    }
+}

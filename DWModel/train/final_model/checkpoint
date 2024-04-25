@@ -1,0 +1,2 @@
+model_checkpoint_path: "/scratch/gpfs/pinchenx/Github/ferro_scratch/PTO/DeepWannier/_TRAIN/dp-plumed-global/model.ckpt"
+all_model_checkpoint_paths: "/scratch/gpfs/pinchenx/Github/ferro_scratch/PTO/DeepWannier/_TRAIN/dp-plumed-global/model.ckpt"

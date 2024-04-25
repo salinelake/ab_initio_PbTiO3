@@ -1,0 +1,11 @@
+ &INPUTPP
+    filplot = 'pto_charge'
+    plot_num = 0
+ /
+
+ &PLOT
+    filepp(1) = 'pto_charge'
+    iflag = 3
+    output_format = 5
+    fileout = 'pto.rho.xsf'
+ /
