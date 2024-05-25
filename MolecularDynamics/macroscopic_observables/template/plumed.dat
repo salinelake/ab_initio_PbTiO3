@@ -1,0 +1,22 @@
+# vim:ft=plumed
+
+########### CV ###########
+dipole: DEEPDIPOLE MODEL=dipole.pb ATYPE=type.raw UNIT_CVT=1.0
+cell: CELL 
+vol: VOLUME
+CUSTOM ...
+  LABEL=cv1
+  ARG=dipole.x,dipole.y,dipole.z
+  VAR=x,y,z
+  FUNC=sqrt(x*x+y*y+z*z)/REPLACE_ncell
+  PERIODIC=NO
+... CUSTOM
+
+########### Output ###########
+PRINT ARG=dipole.x,dipole.y,dipole.z,cv1,vol,cell.ax,cell.by,cell.cz STRIDE=100 FILE=COLVAR
+
+#endofinput 
+ENDPLUMED
+
+internal energy unit 1kj/mol = 10meV
+system energy maximal difference   1eV/cell => 216eV=21600kj/mol for 6x6x6 system
