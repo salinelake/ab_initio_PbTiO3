@@ -75,12 +75,12 @@
                 "/home/pinchenx/ferro/DeepWannier/iter.000000/data.004/deepdp",
                 "/home/pinchenx/ferro/DeepWannier/iter.000001/data.003/deepdp",
                 "/home/pinchenx/ferro/DeepWannier/iter.000003/data.004/deepdp",
-                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000002/data.004/deepdp",
-                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000004/data.004/deepdp",
-                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000005/data.005/deepdp",
-                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000006/data.005/deepdp",
-                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000007/data.003/deepdp",
-                "/home/pinchenx/ferro/DeepWannier/cori_income/DeepWannier/iter.000008/data.005/deepdp"
+                "/home/pinchenx/ferro/DeepWannier/iter.000002/data.004/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000004/data.004/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000005/data.005/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000006/data.005/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000007/data.003/deepdp",
+                "/home/pinchenx/ferro/DeepWannier/iter.000008/data.005/deepdp"
             ],
             "set_prefix": "set",
             "batch_size": [

@@ -1,0 +1,73 @@
+variable        NSTEPS          equal 200000
+variable        THERMO_FREQ     equal 100
+variable        DUMP_FREQ       equal 20
+variable        dt              equal 0.0005
+variable        PRES            equal 28000.0
+variable        TAU_T           equal 0.1
+variable        TAU_P           equal 1
+variable        restart         equal 0
+variable        TEMP1         equal 815
+
+# ---------------------- INITIALIZAITION ------------------
+units           metal
+boundary        p p p
+atom_style      atomic
+restart         5000 pto.rest1 pto.rest2
+#read_restart   pto.rest1 
+
+# --------------------- ATOM DEFINITION ------------------
+read_data       conf.lmp
+replicate       1 1 1
+mass            1 15.999400
+mass            2 207.600000
+mass            3 47.867000
+# --------------------- FORCE FIELDS ---------------------
+pair_style      deepmd frozen_model.pb
+pair_coeff      * *
+# --------------------- MD SETTINGS ----------------------
+neighbor        1.0 bin
+timestep        ${dt}
+thermo          ${THERMO_FREQ}
+thermo_style    custom step temp pe ke etotal press vol density lx ly lz
+#------------------------ GROUPS -----------------------
+# region          inner block 4 54.65 4 54.65  INF INF  units box
+region          inner block INF INF INF INF 8 INF   units box
+group           sys  region inner
+group           env  subtract all sys
+# --------------------- thermo SETTINGS ----------------------
+#if "${restart} == 0" then "velocity        all create ${TEMP} 562280"
+
+
+velocity        all create ${TEMP1} 562280 dist gaussian
+fix             mzero all momentum 1000 linear 1 1 1
+fix             init all npt temp ${TEMP1} ${TEMP1} ${TAU_T} iso ${PRES} ${PRES} ${TAU_P}
+run             10000
+unfix           init
+fix             init2 all npt temp ${TEMP1} ${TEMP1} ${TAU_T} aniso ${PRES} ${PRES} ${TAU_P}
+run             10000
+unfix           init2
+reset_timestep 	0
+ 
+fix             1    all plumed  plumedfile plumed.dat outfile plumed.out
+fix             stat all npt     temp ${TEMP} ${TEMP} 5 aniso ${PRES} ${PRES} 5
+# fix             tstat  env langevin ${TEMP} ${TEMP} ${TAU_T} ${SEED}
+# fix             bstat  all nph aniso ${PRES} ${PRES} ${TAU_P}
+dump            1    all custom ${DUMP_FREQ} pto0.lammpstrj id type x y z
+run             ${NSTEPS}
+undump          1
+
+dump            1    all custom ${DUMP_FREQ} pto1.lammpstrj id type x y z
+run             ${NSTEPS}
+undump          1
+
+dump            1    all custom ${DUMP_FREQ} pto2.lammpstrj id type x y z
+run             ${NSTEPS}
+undump          1
+
+dump            1    all custom ${DUMP_FREQ} pto3.lammpstrj id type x y z
+run             ${NSTEPS}
+undump          1
+
+dump            1    all custom ${DUMP_FREQ} pto4.lammpstrj id type x y z
+run             ${NSTEPS}
+undump          1
