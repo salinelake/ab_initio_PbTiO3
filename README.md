@@ -1,2 +1,3 @@
-# ab_initio_PbTiO3
-ab initio multiscale modeling of ferroelectric PbTiO3
+# Suppporting materials
+
+Datasets, models and scripts that support the findings of the paper "Thermal disorder and phonon softening in the ferroelectric phase transition of lead titanate" 
