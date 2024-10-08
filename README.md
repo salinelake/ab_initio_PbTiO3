@@ -2,7 +2,7 @@
 
 Datasets, models and scripts that support the findings of the paper "Thermal disorder and phonon softening in the ferroelectric phase transition of lead titanate" 
 
-Folder "DFT" contains preliminary DFT calculations, including structural relaxation, converence check, etc.
+Folder "DFT" contains preliminary DFT calculations, including structural relaxation, convergence check, etc.
 
 Folder "DPModel" contains datasets, models, and scripts for training the Deep Potential model of PbTiO3. 
 
