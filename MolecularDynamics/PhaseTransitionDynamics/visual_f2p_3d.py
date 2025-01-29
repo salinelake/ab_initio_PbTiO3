@@ -40,7 +40,7 @@ def moving_average_half_gaussian(a, sigma=25, axis=0, truncate=3.0):
     return ret[throw:-throw,...]
  
 
-mfile = './T823S0/dipole2.npy'
+mfile = '/home/pinchenx/data.gpfs/ferro_scratch/PTO/PhaseTransDynamics/T823S0/dipole2.npy'
 ############## Load structure data
 ss=15
 dt = 0.0005 * 20
@@ -90,7 +90,7 @@ axbig.plot(timevec[timevec<30+toffset], Py[timevec<30+toffset], alpha=0.6,label=
 axbig.axhline(1.64, color='black', alpha=0.5, linestyle='dashed')
 axbig.legend(frameon=True,framealpha=1,)
 axbig.set_xlabel(r'$t$ [ps]')
-axbig.set_ylabel(r'$\overline{p}$ [eA]')
+axbig.set_ylabel(r'$\overline{p}$ [$\mathrm{e\AA}$]')
 ############################## evolution of dipole ############################## 
 paxis =2
 for ii, tt in enumerate(tt_list):
@@ -118,7 +118,7 @@ fig.subplots_adjust(left=0.01 , right=0.94, top=0.99, bottom=0.01)
 cbar_ax = fig.add_axes([0.945, 0.07, 0.015 , 0.5])
 sm = plt.cm.ScalarMappable(norm=norm, cmap=mycmap)
 cb = fig.colorbar(sm,  cax=cbar_ax)#, orientation='horizontal')
-cbar_ax.set_title(r'$\tilde{p}_i^z$ [eA]', pad=30)
+cbar_ax.set_title(r'$\tilde{p}_i^z$ [$\mathrm{e\AA}$]', pad=30)
 fig.savefig('f2p_3d.png', dpi=300)
 plt.close(fig)
  

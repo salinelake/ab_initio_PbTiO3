@@ -27,7 +27,7 @@ ss = 15
 throw = 100
 ncell = ss**3
 dipole_average = []
-fig,ax = plt.subplots(2,1, figsize = (6, 8))
+fig,ax = plt.subplots(3,1, figsize = (6, 10))
 for ii, temp in enumerate(temp_list):
     folder = '/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPMD/check_dipole_distribution/data/T{}_ss{}'.format(temp, ss ) 
     pto_factory = perovskite(ABO3=['He','Li','H'], born_charges=[3.7140, 5.4879, -3.3551, -2.9234])
@@ -74,10 +74,6 @@ for ii, temp in enumerate(temp_list):
     ax[0].hist(dipole_dist, bins=200, histtype='step', 
             color=mycmap((temp-temp_list[0])/(temp_list[-1]-temp_list[0])), 
             alpha=0.2, linewidth=1, density=True, label='T={}'.format(temp) ) 
-
-
-
-
 
 ax[0].set_xlabel(r'$|p|$ [$\mathrm{e\AA}$] ')
 ax[0].set_ylabel(r'$\rho(|p|)$')
@@ -143,24 +139,48 @@ for ii, temp in enumerate(temp_list):
     # ax[1].set_xlabel('d [Unit Distance] ')
     # ax[1].set_ylabel(r'$<\Delta P_i\cdot\Delta P_{i+d}>/<\|\Delta P_i\|^2>$')
 # ax.legend(frameon=False)
-ax[1].text(0.4, 0.54, r'$\uparrow$ $T=821$K, [001] Ferro ', transform=ax[1].transAxes, fontsize=13,#fontdict=text_font,
+ax[1].text(0.4, 0.54, r'$\uparrow$ $T=821$ K, [001] Ferro ', transform=ax[1].transAxes, fontsize=13,#fontdict=text_font,
     verticalalignment='top')
-ax[1].text(0.5, 0.22, r'$\downarrow$ $T=821$K, Para', transform=ax[1].transAxes, fontsize=13,#fontdict=text_font,
+ax[1].text(0.5, 0.22, r'$\downarrow$ $T=821$ K, Para', transform=ax[1].transAxes, fontsize=13,#fontdict=text_font,
     verticalalignment='top')
 ax[1].set_xlabel(r'$|d_{ij}|$')
 ax[1].set_ylabel(r'$\langle p_i\cdot p_{j}\rangle/\langle\|p_i\|^2\rangle$')
 # sm = plt.cm.ScalarMappable(cmap=mycmap, norm=plt.Normalize(vmin=temp_list[0], vmax=temp_list[-1]))
 # cb = fig.colorbar(sm)
 # cb.set_label( label=r'$T$[K]' )
+from ase.geometry.analysis import Analysis
+
+ss = 15
+# dt = 5ps
+
+rmax=5
+nbins=500
+distance = np.linspace(0,rmax,nbins+1)[:-1]
+distance += (distance[1] - distance[0])/2
+for temp in [300, 820,822, 900]:
+    rdf = np.load('T{}L{}_rdf.npy'.format(temp, ss))
+    if temp == 820:
+        label = r'$T=T_c-1$ K'
+    elif temp == 822:
+        label = r'$T=T_c+1$ K'
+    else:
+        label = r'$T={}$ K'.format(temp)
+    ax[2].plot(distance[distance > 3], rdf[distance > 3], label=label, 
+               markersize=0, linewidth=2, linestyle='solid')
+
+ax[2].legend(frameon=False)
+ax[2].set_xlabel('r [$\mathrm{\AA}$]')
+ax[2].set_ylabel('g(r)')
 
 ax[0].set_title('(a)',loc='left', fontsize=15)
 ax[1].set_title('(b)',loc='left', fontsize=15)
+ax[2].set_title('(c)',loc='left', fontsize=15)
 
-fig.subplots_adjust(left=0.15, right=0.8, top=0.96, bottom=0.07)
-cbar_ax = fig.add_axes([0.825, 0.15, 0.025, 0.7])
+fig.tight_layout()
+fig.subplots_adjust(left=0.15, right=0.8, top=0.96, bottom=0.05)
+cbar_ax = fig.add_axes([0.825, 0.4, 0.025, 0.55])
 sm = plt.cm.ScalarMappable(cmap=mycmap, norm=plt.Normalize(vmin=temp_list[0], vmax=temp_list[-1]))
 cb = fig.colorbar(sm,  cax=cbar_ax)
-cb.set_label( label=r'$T$[K]' )
+cb.set_label( label=r'$T$ [K]' )
 
-# fig.tight_layout()
-fig.savefig('DipoleCorr.png', dpi=300)
+fig.savefig('disorder.png', dpi=300)
