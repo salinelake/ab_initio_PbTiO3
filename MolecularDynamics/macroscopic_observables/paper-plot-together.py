@@ -12,7 +12,7 @@ thermo_list = []
 thermo_ss_list = []
 enthalpy_list = []
 cp_list = []
-data_folder_prefix = '/home/pinchenx/data.gpfs/Github/ferro_scratch/PTO/DPMD/final_susceptibility_press/'
+data_folder_prefix = '/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPMD/final_susceptibility_press/'
 
 """
 Lattice constant
@@ -170,9 +170,10 @@ cp_exp2 = exp2[:,1] - 3*kb* 5 * avogadro * eV2J
 ### enthalpy vs temperature
 for idx,ss in enumerate(ss_list):
     linewidth = 0 if ss<15 else 2
+    linestyle = 'solid' if ss<15 else 'dashed'
     filter = [idx for idx, current_ss in enumerate(thermo_ss_list) if current_ss==ss]
-    ax[0,1].plot(arr_temp[filter], (arr_enthalpy[filter] - arr_enthalpy[filter].max()) , linewidth=linewidth,label=r'$L={}$'.format(ss))
-    ax[1,1].plot(arr_temp[filter], arr_cp[filter]  , linewidth=linewidth, label='$L={}$'.format(ss))
+    ax[0,1].plot(arr_temp[filter], (arr_enthalpy[filter] - arr_enthalpy[filter].max()) , linewidth=linewidth,label=r'$L={}$'.format(ss), linestyle=linestyle)
+    ax[1,1].plot(arr_temp[filter], arr_cp[filter]  , linewidth=linewidth, label='$L={}$'.format(ss), linestyle=linestyle)
     print(arr_temp[filter])
     print(arr_cp[filter])
     print(arr_tetra[filter] )
@@ -180,9 +181,6 @@ ax[0,1].plot(temp_enthalpy[:], exp_enthalpy[:], label='EXP',marker='d', markersi
 ax[1,1].plot(temp_exp1[:], cp_exp1[:], label='EXP: FZ',marker='d', markersize=4 )
 ax[1,1].plot(temp_exp2[75:], cp_exp2[75:], label='EXP: SSR',marker='s', markersize=4 )
 ax[1,1].set_ylim(-10,350)
-# ax[1,1].axvline(x=763,  linewidth=2,markersize=0, linestyle='dotted',color='black',label=r"$T_{E}=763$K")
-# ax[1,1].axvline(x=821.5,  linewidth=1,markersize=0, linestyle='.',color='b')
-# ax[1,1].set_yscale('log')
 ax[0,1].set_xlabel(r'$T$ [K]',fontdict=font)
 ax[0,1].set_ylabel(r'$H - C_0T$ [J/mol]',fontdict=font)
 # ax1.set_ylabel(r'$H$ [eV/atoms]',fontdict=font)
@@ -304,11 +302,10 @@ heat_suscept = heat_diel[:,1] -1
 for idx,ss in enumerate(ss_list):
     filter = [idx for idx, current_ss in enumerate(thermo_ss_list) if current_ss==ss and arr_temp[idx]>500]
     linewidth = 2 if ss==ss_list[-1] else 0
-    ax[1,2].plot(arr_temp[filter], arr_suscept_long[filter], linewidth=linewidth,label=r'$L={}$'.format(ss))
+    linestyle = 'dashed' if ss==ss_list[-1] else 'solid'
+    ax[1,2].plot(arr_temp[filter], arr_suscept_long[filter], linewidth=linewidth,label=r'$L={}$'.format(ss), linestyle=linestyle)
 ax[1,2].plot(cool_temp[8:], cool_suscept[8:],label=r'EXP ($T\nearrow$)',marker='s')
 ax[1,2].plot(heat_temp[8:], heat_suscept[8:],label=r'EXP ($T\searrow$)',marker='d')
-
-    # ax2.plot(arr_temp[filter], arr_suscept_trans[filter], marker='x',linewidth=2,label=r'Transverse, $L={}$'.format(ss))
 ######## curie weiss
 inset_loc = [0.15, 0.55, 0.32, 0.35]
 ins = ax[1,2].inset_axes(inset_loc)
@@ -320,10 +317,10 @@ coef = polyfit(1/cw_suscept, cw_temp ,deg=1 )
 print(coef)
 try_temp = np.array([500,1000])
 ## the right half of X^-1
-ins.plot(cw_temp, 1000/cw_suscept, linestyle='-',color='green',linewidth=0 )
-ins.plot(try_temp, 1000/coef[0]*(try_temp-coef[1]), linestyle='-',color='green',linewidth=1.5,markersize=0 )
-ins.annotate(r'$C={:.1f}\times 10^5$K'.format(coef[0]/10**5), xy=(0.05,0.85),xycoords='axes fraction', fontsize=11)
-ins.annotate(r'$T_\theta={:.0f}$K'.format(coef[1]), xy=(0.05,0.65),xycoords='axes fraction', fontsize=11)
+ins.plot(cw_temp, 1000/cw_suscept, linestyle='solid',color='green',linewidth=0 )
+ins.plot(try_temp, 1000/coef[0]*(try_temp-coef[1]), linestyle='solid',color='green',linewidth=1.5,markersize=0 )
+ins.annotate(r'$C={:.1f}\times 10^5$ K'.format(coef[0]/10**5), xy=(0.05,0.85),xycoords='axes fraction', fontsize=11)
+ins.annotate(r'$T_\theta={:.0f}$ K'.format(coef[1]), xy=(0.05,0.65),xycoords='axes fraction', fontsize=11)
 ins.set_xlabel(r'$T$ [K]',fontdict=inset_font)
 ins.set_ylabel(r'$\chi_l^{-1}$ [$10^{-3}$]',fontdict=inset_font)
 ins.set_xlim(800,920)
@@ -347,7 +344,7 @@ ax[0,2].set_title('(e)',loc='left', fontsize=15)
 ax[1,2].set_title('(f)',loc='left', fontsize=15)
 
 plt.tight_layout()
-plt.savefig('paper-MD.png',dpi=300)
+plt.savefig('paper-MD.png', dpi=300)
 plt.close()   
 
 

@@ -54,51 +54,51 @@ def get_data(dataset, dp):
     return e_ref, e_pred, f_ref, f_pred
 
 trainset = [
-    "../DFT_data/PTO.init/02.md/cubic/300K/deepmd",
-    "../DFT_data/PTO.init/02.md/cubic/600K/deepmd",
-    "../DFT_data/PTO.init/02.md/cubic/900K/deepmd",
-    "../DFT_data/PTO.init/02.md/tetra/300K/deepmd",
-    "../DFT_data/PTO.init/02.md/tetra/600K/deepmd",
-    "../DFT_data/PTO.init/02.md/tetra/900K/deepmd",
-    "../DFT_data/iter.000000/02.fp/data.001",
-    "../DFT_data/iter.000000/02.fp/data.004",
-    "../DFT_data/iter.000001/02.fp/data.003",
-    "../DFT_data/iter.000001/02.fp/data.002",
-    "../DFT_data/iter.000001/02.fp/data.005",
-    "../DFT_data/iter.000001/02.fp/data.000",
-    "../DFT_data/iter.000002/02.fp/data.001",
-    "../DFT_data/iter.000002/02.fp/data.004",
-    "../DFT_data/iter.000003/02.fp/data.003",
-    "../DFT_data/iter.000003/02.fp/data.001",
-    "../DFT_data/iter.000003/02.fp/data.000",
-    "../DFT_data/iter.000003/02.fp/data.004",
-    "../DFT_data/iter.000004/02.fp/data.001",
-    "../DFT_data/iter.000004/02.fp/data.004",
-    "../DFT_data/iter.000005/02.fp/data.003",
-    "../DFT_data/iter.000005/02.fp/data.001",
-    "../DFT_data/iter.000005/02.fp/data.002",
-    "../DFT_data/iter.000005/02.fp/data.005",
-    "../DFT_data/iter.000006/02.fp/data.003",
-    "../DFT_data/iter.000006/02.fp/data.001",
-    "../DFT_data/iter.000006/02.fp/data.002",
-    "../DFT_data/iter.000006/02.fp/data.005",
-    "../DFT_data/iter.000006/02.fp/data.000",
-    "../DFT_data/iter.000006/02.fp/data.004",
-    "../DFT_data/iter.000007/02.fp/data.003",
-    "../DFT_data/iter.000007/02.fp/data.000",
-    "../DFT_data/iter.000008/02.fp/data.002",
-    "../DFT_data/iter.000008/02.fp/data.005",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/PTO.init/02.md/cubic/300K/deepmd",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/PTO.init/02.md/cubic/600K/deepmd",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/PTO.init/02.md/cubic/900K/deepmd",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/PTO.init/02.md/tetra/300K/deepmd",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/PTO.init/02.md/tetra/600K/deepmd",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/PTO.init/02.md/tetra/900K/deepmd",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000000/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000000/02.fp/data.004",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000001/02.fp/data.003",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000001/02.fp/data.002",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000001/02.fp/data.005",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000001/02.fp/data.000",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000002/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000002/02.fp/data.004",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000003/02.fp/data.003",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000003/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000003/02.fp/data.000",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000003/02.fp/data.004",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000004/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000004/02.fp/data.004",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000005/02.fp/data.003",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000005/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000005/02.fp/data.002",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000005/02.fp/data.005",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000006/02.fp/data.003",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000006/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000006/02.fp/data.002",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000006/02.fp/data.005",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000006/02.fp/data.000",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000006/02.fp/data.004",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000007/02.fp/data.003",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000007/02.fp/data.000",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000008/02.fp/data.002",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000008/02.fp/data.005",
 ]
 testset = [ 
-    "../DFT_data/iter.000009/02.fp/data.001",
-    "../DFT_data/iter.000009/02.fp/data.004",
-    "../DFT_data/iter.000010/02.fp/data.001",
-    "../DFT_data/iter.000010/02.fp/data.005",
-    "../DFT_data/iter.000011/02.fp/data.001",
-    "../DFT_data/iter.000011/02.fp/data.005"
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000009/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000009/02.fp/data.004",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000010/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000010/02.fp/data.005",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000011/02.fp/data.001",
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/iter.000011/02.fp/data.005"
     ]
 extra_test = [
-    "../DFT_data/_FP_TEST/4x4x4_test/T925_tetra/deepmd"
+    "/home/pinchenx/data.gpfs/ferro_scratch/PTO/DPGEN/_FP_TEST/4x4x4_test/T925_tetra/deepmd"
 ]
 ## load all training data
 dp = DP('./final_model/model-compress.pb' )
@@ -126,7 +126,7 @@ scatter_hist(e_ref,(e_pred-e_ref), axes[0], hist_axes[0])
 axes[0].scatter(test_e_ref, test_e_pred-test_e_ref, s=np.ones_like(test_e_ref)*3, label='Test')
 axes[0].scatter(extra_e_ref, extra_e_pred-extra_e_ref, s=np.ones_like(extra_e_ref)*6, label='Test',color='yellow')
 axes[0].set_xlabel(r"$E_{DFT}-E_0$ [meV/atom]",fontdict=font)
-axes[0].set_ylabel(r"$\Delta E$[meV/atom]",fontdict=font)
+axes[0].set_ylabel(r"$\Delta E$ [meV/atom]",fontdict=font)
 #################################
 scatter_hist(f_ref[:,0], f_error[:,0] , axes[1], hist_axes[1])
 axes[1].scatter(test_f_ref[:,0], test_f_error[:,0], s=np.ones_like(test_f_ref[:,0])*2, label='Test')

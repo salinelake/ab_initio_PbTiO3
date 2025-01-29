@@ -94,11 +94,11 @@ for ii, temp in enumerate(temp_list):
     if temp in temp_plot:
         if temp < 821:
             if temp == 300:
-                ax[0].plot(wavenumber[wavenumber<800], acf_freal[wavenumber<800], label='T={}K'.format(temp), zorder=10)
+                ax[0].plot(wavenumber[wavenumber<800], acf_freal[wavenumber<800], label='T={} K'.format(temp), zorder=10)
             else:
-                ax[0].plot(wavenumber[wavenumber<800], acf_freal[wavenumber<800], label='T={}K'.format(temp) )
+                ax[0].plot(wavenumber[wavenumber<800], acf_freal[wavenumber<800], label='T={} K'.format(temp) )
         else:
-            ax[1].plot(wavenumber[wavenumber<800], acf_freal[wavenumber<800], label='T={}K'.format(temp))
+            ax[1].plot(wavenumber[wavenumber<800], acf_freal[wavenumber<800], label='T={} K'.format(temp))
     ### get first peak frequency
     center = np.argmax(acf_freal[wavenumber<100])
     center_height = acf_freal[wavenumber<100].max()
@@ -146,7 +146,7 @@ soft_mode = np.array(soft_mode)**2
 ###
 ax[0].legend()
 ax[1].legend()
-ax[1].set_xlabel(r'$\omega$[cm${}^{-1}$]', fontsize=14)
+ax[1].set_xlabel(r'$\omega$ [cm${}^{-1}$]', fontsize=14)
 # ax[1].set_ylabel(r'$\alpha(\omega)n(\omega)$ [arb. unit]')
 fig.supylabel(r'$\alpha(\omega)n(\omega)$ [arb. unit]', fontsize=14)
 
