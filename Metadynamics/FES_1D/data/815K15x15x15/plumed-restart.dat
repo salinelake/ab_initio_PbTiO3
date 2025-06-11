@@ -1,0 +1,38 @@
+# vim:ft=plumed
+
+########### CV ###########
+dipole: DEEPDIPOLE MODEL=dipole.pb ATYPE=type.raw UNIT_CVT=1.0
+CUSTOM ...
+  LABEL=cv1
+  ARG=dipole.x,dipole.y,dipole.z
+  VAR=x,y,z
+  FUNC=sqrt(x*x+y*y+z*z)/3375
+  PERIODIC=NO
+... CUSTOM
+
+METAD ...
+ LABEL=metad
+ ARG=cv1
+ SIGMA=0.05
+ HEIGHT=0.0
+ BIASFACTOR=24
+ TEMP=815
+ PACE=10000000
+ GRID_MIN=0.0
+ GRID_MAX=3.0
+ GRID_BIN=300
+ CALC_RCT
+ RESTART=YES
+... METAD
+
+UPPER_WALLS ...
+ ARG=cv1
+  AT=2.5
+ KAPPA=10000.0
+ LABEL=uwall
+... UPPER_WALLS
+
+PRINT ARG=* STRIDE=100 FILE=COLVAR_static
+
+#endofinput 
+ENDPLUMED

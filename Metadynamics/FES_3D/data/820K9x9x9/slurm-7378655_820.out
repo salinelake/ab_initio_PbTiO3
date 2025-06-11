@@ -1,0 +1,90 @@
+2021-10-03 18:43:35.539485: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+PLUMED: PLUMED is starting
+PLUMED: Version: 2.6.3 (git: 64d767d) compiled on Jul  9 2021 at 03:51:21
+PLUMED: Please cite these papers when using PLUMED [1][2]
+PLUMED: For further information see the PLUMED web page at http://www.plumed.org
+PLUMED: Root: /home/pinchenx/data.gpfs/envs/dp-plumed-mpi/lib/plumed
+PLUMED: For installed feature, see /home/pinchenx/data.gpfs/envs/dp-plumed-mpi/lib/plumed/src/config/config.txt
+PLUMED: Molecular dynamics engine: 
+PLUMED: Precision of reals: 8
+PLUMED: Running over 1 node
+PLUMED: Number of threads: 1
+PLUMED: Cache line size: 512
+PLUMED: Number of atoms: 1
+PLUMED: File suffix: 
+PLUMED: Timestep: 0.000000
+PLUMED: KbT has not been set by the MD engine
+PLUMED: It should be set by hand where needed
+PLUMED: Relevant bibliography:
+PLUMED:   [1] The PLUMED consortium, Nat. Methods 16, 670 (2019)
+PLUMED:   [2] Tribello, Bonomi, Branduardi, Camilloni, and Bussi, Comput. Phys. Commun. 185, 604 (2014)
+PLUMED: Please read and cite where appropriate!
+PLUMED: Finished setup
+PLUMED: Action FAKE
+PLUMED:   with label px
+PLUMED: Action FAKE
+PLUMED:   with label py
+PLUMED: Action FAKE
+PLUMED:   with label pz
+PLUMED: Action FUNCSUMHILLS
+PLUMED:   with label @3
+PLUMED:   with arguments px py pz
+PLUMED:   Output format is %14.9f
+PLUMED:   hillsfile  : HILLS
+PLUMED:   Doing integration slices every 3999 kernels
+PLUMED:   output file for fes/bias  is :  fes_
+PLUMED: 
+PLUMED:   Now calculating...
+PLUMED: 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   opening file HILLS
+PLUMED:   done with this chunk: now with 3999 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_0.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   done with this chunk: now with 7998 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_1.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   done with this chunk: now with 11997 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_2.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   done with this chunk: now with 15996 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_3.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   done with this chunk: now with 19995 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_4.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   done with this chunk: now with 23994 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_5.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   done with this chunk: now with 27993 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_6.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   done with this chunk: now with 31992 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_7.dat 
+PLUMED:   reading hills: 
+PLUMED:   doing serialread 
+PLUMED:   closing file HILLS
+PLUMED:   now total 32000 kernels 
+PLUMED:   final chunk: now with 32000 kernels  
+PLUMED: 
+PLUMED:   Writing full grid on file fes_8.dat 
+PLUMED:                                               Cycles        Total      Average      Minumum      Maximum
+PLUMED: 0 Summing hills                                    1    65.314110    65.314110    65.314110    65.314110
+PLUMED:                                               Cycles        Total      Average      Minumum      Maximum
+PLUMED:                                                    1     0.000145     0.000145     0.000145     0.000145

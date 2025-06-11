@@ -1,0 +1,66 @@
+# vim:ft=plumed
+
+########### CV ###########
+dipole: DEEPDIPOLE MODEL=dipole.pb ATYPE=type.raw UNIT_CVT=1.0
+vol: VOLUME
+CUSTOM ...
+  LABEL=px
+  ARG=dipole.x,vol
+  VAR=x,v
+  FUNC=x/v/1000
+  PERIODIC=NO
+... CUSTOM
+CUSTOM ...
+  LABEL=py
+  ARG=dipole.y,vol
+  VAR=y,v
+  FUNC=y/v/1000
+  PERIODIC=NO
+... CUSTOM
+CUSTOM ...
+  LABEL=pz
+  ARG=dipole.z,vol
+  VAR=z,v
+  FUNC=z/v/1000
+  PERIODIC=NO
+... CUSTOM
+CUSTOM ...
+  LABEL=d1
+  ARG=px,py
+  VAR=x,y
+  FUNC=y-x
+  PERIODIC=NO
+... CUSTOM  
+CUSTOM ...
+  LABEL=d2
+  ARG=py,pz
+  VAR=y,z
+  FUNC=z-y
+  PERIODIC=NO
+... CUSTOM  
+########### Target distributions ###########
+METAD ...
+  LABEL=metad
+  ARG=px,py,pz
+  SIGMA=0.001,0.001,0.001
+  TAU=50
+  BIASFACTOR=REPLACE_bias
+  TEMP=REPLACE_temp
+  PACE=500
+  GRID_MIN=-0.02,-0.02,-0.02
+  GRID_MAX=0.05,0.05,0.07
+  GRID_BIN=100,100,200
+  CALC_RCT
+... METAD
+########### Constraints ###########
+UPPER_WALLS ARG=px,py,pz AT=0.045,0.045,0.065 KAPPA=100000000,100000000,100000000 LABEL=uwall
+LOWER_WALLS ARG=px,py,pz AT=0.0,0.0,0.0 KAPPA=10000000,10000000,10000000 LABEL=lwall
+LOWER_WALLS ARG=d1,d2 AT=0.0,0.0 KAPPA=10000000,10000000 LABEL=lwall_d
+
+########### Output ###########
+PRINT ARG=* STRIDE=100 FILE=COLVAR
+
+#endofinput 
+ENDPLUMED
+
+internal energy unit 1kj/mol = 10meV
