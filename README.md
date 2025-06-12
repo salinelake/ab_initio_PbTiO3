@@ -10,5 +10,7 @@ Folder "DWModel" contains datasets, models, and scripts for training the Deep Di
 
 Folder "MolecularDynamics" contains scripts for MD simulations and data analysis. 
 
+Folder "Metadynamics" contains scripts for metadynamics simulations and data analysis. 
+
 Some simulations requires the DeepMD Plumed Module at github.com/y1xiaoc/deepmd-plumed.
 
