@@ -1,6 +1,6 @@
 # Suppporting materials
 
-Datasets, models and scripts that support the findings of the paper "Thermal disorder and phonon softening in the ferroelectric phase transition of lead titanate" 
+Datasets, models and scripts that support the findings of the paper "Thermal disorder and phonon softening in the ferroelectric phase transition of lead titanate"  and "Ab Initio Bulk Free Energy Surface of Proper Ferroelectrics"
 
 Folder "DFT" contains preliminary DFT calculations, including structural relaxation, convergence check, etc.
 
